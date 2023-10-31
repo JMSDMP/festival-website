@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background: linear-gradient(95deg,#c55,#cc5,#5c5,#5cc,#55c,#c5c); 
+    -webkit-backdrop-filter: brightness(50%);
+    backdrop-filter: brightness(50%);
+    text-align:center; 
+    padding: 1em;
+    color: white;
+}
+
+header > h1 , header > h2 {
+    text-shadow: 0 0 0.5em black;
+}
+
+nav {
+    display: flex;
+    background: #ccc;
+}
+
+nav > div {
+    padding: 0.5em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+nav > div.active {
+    background: #aaa;
+}
+
+main {
+    padding: 1em;
+}
+
+.activities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.activities > div {
+    height: 15rem;
+}
+
+.activity-name {
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+/* activity images */
+
+.activity-img {
+    color: transparent;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.paintball-img {
+    background-image: url("./images/paintball.jpg");
+    background-position: 0 25%;
+}
+
+.paint-img {
+    background-image: url("./images/painting.jpg");
+}
+
+.kids-area-img {
+    background-image: url("./images/kids_area.jpeg");
+}
+
+.tye-dye-img {
+    background-image: url("./images/tye_dye.jpg");
+}
+
+.face-paint-img {
+    background-image: url("./images/face_paint.jpg");
+}
+
+.zorbing-img {
+    background-image: url("./images/zorbing.jpeg");
+}
+
+.fireworks-img {
+    background-image: url("./images/fireworks.jpg");
+}
+
+.sweets-img {
+    background-image: url("./images/sweets.jpg");
+}
+
+.foam-pit-img {
+    background-image: url("./images/foam_pit.jpeg");
+}
+
+.light-show-img {
+    background-image: url("./images/light_show.jpg");
+    background-position: 0 75%;
+}
