@@ -35,9 +35,15 @@ main {
     padding: 1em;
 }
 
+form {
+    max-width: 50em;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .ticket-type-container {
     border: #ccc 2px solid;
-    max-width: 50em;
+    text-align: left;
 }
 
 .buy-section {
@@ -63,6 +69,7 @@ main {
     border-radius: 1em;
     color: black;
     background: #ddd;
+    margin-top: 1rem;
 }
 
 #checkout:active {

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Buy Tickets</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <header>
@@ -13,64 +13,81 @@
         </header>
         <nav>
             <div class="" onclick="document.location = '../'">HOME</div>
-            <div class="active" onclick="document.location = './'">BUY TICKETS</div>
+            <div class="active" onclick="document.location = './'">
+                BUY TICKETS
+            </div>
         </nav>
         <main>
             <form action="../booking_success/">
-            <div class="ticket-type-container">
-                <div class="ticket-type">Festival Ticket</div>
-                <div class="ticket-type-description">
-                    Access to all our incredible activities
-                    <ul>
-                        <li>Paintballing</li>
-                        <li>Painting</li>
-                        <li>Kids play area</li>
-                        <li>Tye dye</li>
-                        <li>Face painting</li>
-                        <li>Zorbing</li>
-                        <li>Fireworks</li>
-                        <li>Sweets stall</li>
-                        <li>Foam pit</li>
-                        <li>Light show</li>
-                    </ul>
+                <div class="ticket-type-container">
+                    <div class="ticket-type">Festival Ticket</div>
+                    <div class="ticket-type-description">
+                        Access to all our incredible activities
+                        <ul>
+                            <li>Paintballing</li>
+                            <li>Painting</li>
+                            <li>Kids play area</li>
+                            <li>Tye dye</li>
+                            <li>Face painting</li>
+                            <li>Zorbing</li>
+                            <li>Fireworks</li>
+                            <li>Sweets stall</li>
+                            <li>Foam pit</li>
+                            <li>Light show</li>
+                        </ul>
+                    </div>
+                    <div class="buy-section">
+                        <span class="quant-txt">Number of tickets</span>
+                        <input
+                            type="button"
+                            value="-"
+                            onclick="sub('norm-tick-quant','norm-tick-price',69.99)"
+                        />
+                        <input
+                            type="number"
+                            name="normal-tickets"
+                            id="norm-tick-quant"
+                            min="0"
+                            value="1"
+                            onchange="updatePrice('norm-tick-quant','norm-tick-price',69.99)"
+                        />
+                        <input
+                            type="button"
+                            value="+"
+                            onclick="add('norm-tick-quant','norm-tick-price',69.99)"
+                        />
+                        <span id="norm-tick-price">£69.99</span>
+                    </div>
                 </div>
-            <div class="buy-section">
-                <div class="quant-txt">Number of tickets</div>
-                    <input type="button" value="-" onclick="sub('norm-tick-quant','norm-tick-price',69.99)">
-                    <input type="number" name="normal-tickets" id="norm-tick-quant" min="0" value="1" onchange="updatePrice('norm-tick-quant','norm-tick-price',69.99)">
-                    <input type="button" value="+" onclick="add('norm-tick-quant','norm-tick-price',69.99)">
-                    <span id="norm-tick-price">£69.99</span>
-                </div>
-            </div>
-            <button id="checkout" type="submit">Purchace Tickets</button>
-        </form>
+                <button id="checkout" type="submit">Purchace Tickets</button>
+            </form>
         </main>
         <script>
-            function add(id,priceid,price) {
-                ele = document.getElementById(id)
-                priceEle = document.getElementById(priceid)
+            function add(id, priceid, price) {
+                ele = document.getElementById(id);
+                priceEle = document.getElementById(priceid);
                 ele.value = Number(ele.value) + 1;
-                
-                updatePrice(id,priceid,price)
+
+                updatePrice(id, priceid, price);
             }
-            function sub(id,priceid,price) {
-                ele = document.getElementById(id)
-                priceEle = document.getElementById(priceid)
+            function sub(id, priceid, price) {
+                ele = document.getElementById(id);
+                priceEle = document.getElementById(priceid);
                 if (ele.value > 0) {
-                    ele.value -= 1
+                    ele.value -= 1;
                 }
-                
-                updatePrice(id,priceid,price)
+
+                updatePrice(id, priceid, price);
             }
-            function updatePrice(id,priceid,price) {
-                ele = document.getElementById(id)
-                priceEle = document.getElementById(priceid)
-                newPrice = Math.ceil((price * Number(ele.value))*100)/100
-                if ((newPrice*100)%10 == 0) {
-                    newPrice = String(newPrice) + "0"
+            function updatePrice(id, priceid, price) {
+                ele = document.getElementById(id);
+                priceEle = document.getElementById(priceid);
+                newPrice = Math.ceil(price * Number(ele.value) * 100) / 100;
+                if ((newPrice * 100) % 10 == 0) {
+                    newPrice = String(newPrice) + "0";
                 }
-                
-                priceEle.innerText = "£" + newPrice
+
+                priceEle.innerText = "£" + newPrice;
             }
         </script>
     </body>
