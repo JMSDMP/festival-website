@@ -19,6 +19,8 @@
         </nav>
         <main>
             <form action="../booking_success/">
+                <p>Select all tickets then click purchace at the bottom of the page.</p>
+                <p>Paintballing and Zorbing tickets can also be purchaced at the festival.</p>
                 <div class="ticket-type-container">
                     <div class="ticket-type">Festival Ticket</div>
                     <div class="ticket-type-description">
@@ -32,7 +34,7 @@
                             <li>Foam pit</li>
                             <li>Light show</li>
                         </ul>
-                        Paintballing and Zorbing tickets can be purchaced at the festival.
+                        
                     </div>
                     <div class="buy-section">
                         <span class="quant-txt">Select number of tickets</span>
@@ -40,7 +42,7 @@
                         <input
                             type="button"
                             value="-"
-                            onclick="sub('norm-tick-quant','norm-tick-price',69.99)"
+                            onclick="sub('norm-tick-quant','norm-tick-price',50)"
                         />
                         <input
                             type="number"
@@ -48,16 +50,77 @@
                             id="norm-tick-quant"
                             min="0"
                             value="1"
-                            onchange="updatePrice('norm-tick-quant','norm-tick-price',69.99)"
+                            onchange="updatePrice('norm-tick-quant','norm-tick-price',50)"
                         />
                         <input
                             type="button"
                             value="+"
-                            onclick="add('norm-tick-quant','norm-tick-price',69.99)"
+                            onclick="add('norm-tick-quant','norm-tick-price',50)"
                         />
-                        <span id="norm-tick-price">£69.99</span>
+                        <span id="norm-tick-price">£50</span>
                     </div>
                 </div>
+                <br>
+                <div class="ticket-type-container">
+                    <div class="ticket-type">Paintballing Ticket</div>
+                    <div class="ticket-type-description">
+                        Access to Paintballing
+                    </div>
+                    <div class="buy-section">
+                        <span class="quant-txt">Select number of tickets</span>
+                        <br>
+                        <input
+                            type="button"
+                            value="-"
+                            onclick="sub('paint-tick-quant','paint-tick-price',12.00)"
+                        />
+                        <input
+                            type="number"
+                            name="paintballing-tickets"
+                            id="paint-tick-quant"
+                            min="0"
+                            value="1"
+                            onchange="updatePrice('paint-tick-quant','paint-tick-price',12.00)"
+                        />
+                        <input
+                            type="button"
+                            value="+"
+                            onclick="add('paint-tick-quant','paint-tick-price',12.00)"
+                        />
+                        <span id="paint-tick-price">£12</span>
+                    </div>
+                </div>
+                <br>
+                <div class="ticket-type-container">
+                    <div class="ticket-type">ZorbingTicket</div>
+                    <div class="ticket-type-description">
+                        Access to Zorbing
+                    </div>
+                    <div class="buy-section">
+                        <span class="quant-txt">Select number of tickets</span>
+                        <br>
+                        <input
+                            type="button"
+                            value="-"
+                            onclick="sub('zorb-tick-quant','zorb-tick-price',10.00)"
+                        />
+                        <input
+                            type="number"
+                            name="zorbing-tickets"
+                            id="zorb-tick-quant"
+                            min="0"
+                            value="1"
+                            onchange="updatePrice('zorb-tick-quant','zorb-tick-price',10.00)"
+                        />
+                        <input
+                            type="button"
+                            value="+"
+                            onclick="add('zorb-tick-quant','zorb-tick-price',10.00)"
+                        />
+                        <span id="zorb-tick-price">£10</span>
+                    </div>
+                </div>
+
                 <button id="checkout" type="submit">Purchace Tickets</button>
             </form>
         </main>
@@ -82,9 +145,9 @@
                 ele = document.getElementById(id);
                 priceEle = document.getElementById(priceid);
                 newPrice = Math.ceil(price * Number(ele.value) * 100) / 100;
-                if ((newPrice * 100) % 10 == 0) {
-                    newPrice = String(newPrice) + "0";
-                }
+                // if ((newPrice * 100) % 10 == 0) {
+                //     newPrice = String(newPrice) + "0";
+                // }
 
                 priceEle.innerText = "£" + newPrice;
             }
